@@ -119,7 +119,7 @@ startRecognizer = ->
 			result = event.results[i]; i += 1
 			if result.isFinal then addTranscription(result[0].transcript)
 			else interim += result[0].transcript
-		$('#interim').text(interim)
+		$('#interim').text(interim || "...")
 		return
 
 	return true
