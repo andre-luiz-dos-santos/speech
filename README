@@ -1,0 +1,7 @@
+
+The WebSpeech API requires an SSL web server.
+To generate a self-signed certificate:
+openssl req -new -x509 -nodes -out server.crt -keyout server.key
+
+To compile the CoffeeScript files to JavaScript whenever a file changes:
+coffee -mwc .

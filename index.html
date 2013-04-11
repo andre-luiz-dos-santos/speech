@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Speech</title>
+		<link rel="stylesheet" href="speech.css">
+		<script src="jquery-1.9.1.min.js"></script>
+		<script src="speech.js"></script>
+	</head>
+	<body>
+		<div id="header">
+			<button id="start" disabled="disabled">Opening</button>
+			<button id="prettify">Prettify</button>
+			<select id="templates">
+				<option></option>
+				<option>?</option>
+				<option>!</option>
+				<option>.</option>
+				<option>:-)</option>
+				<option>:-(</option>
+			</select>
+			<select id="language">
+				<option value="pt-BR">Portuguese (pt-BR)</option>
+				<option value="en-US">English (en-US)</option>
+				<option value="eo">Esperanto (eo)</option>
+				<option value="eo-EO">Esperanto (eo-EO)</option>
+			</select>
+			<span id="interim">...</span>
+		</div>
+		<textarea id="text"></textarea>
+		<div id="help">
+			Press <span class="key">Escape</span> or <span class="key">Insert</span> to start/stop.<br>
+			Press <span class="key">Control-C</span> anywhere to run Prettify and copy all text.<br>
+			Press <span class="key">Control-X</span> anywhere to run Prettify and cut all text.<br>
+			Spoken text is added at the cursor position, replacing selected text.
+		</div>
+	</body>
+</html>

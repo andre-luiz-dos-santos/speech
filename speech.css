@@ -1,0 +1,19 @@
+#header {
+	font-size: 1.5em;
+}
+#start {
+	font-size: 1.5em;
+}
+#interim {
+	color: gray;
+}
+#text {
+	width: 100%;
+	height: 20em;
+	font-family: consolas;
+	font-size: 1.2em;
+}
+#help .key {
+	font-weight: bold;
+	color: #006;
+}
