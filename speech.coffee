@@ -14,12 +14,12 @@ changeStatus = (message, clickable = false) ->
 # Correct commonly misrecognized words.
 prettifyText = do ->
 	lineStart = /(^|[.!?)]\s+)(\w)/g
-	alwaysCapitalize = /\b(google|microsoft|portuguese|english|fastville|esperanto|português|inglês)\b/
+	alwaysCapitalize = /\b(google|microsoft|portuguese|english|fastville|esperanto|português|inglês)\b/g
 	return (text) -> text
 		.replace(lineStart, (_,l,u) -> l + u.toUpperCase())
 		.replace(alwaysCapitalize, (w) -> w.substr(0,1).toUpperCase() + w.substr(1).toLowerCase())
-		.replace(/\big\b/, 'e')
-		.replace(/\buol\b/, 'ou')
+		.replace(/\big\b/g, 'e')
+		.replace(/\buol\b/g, 'ou')
 
 # Insert text into the main input text area.
 # Add spaces around text when necessary.
@@ -70,6 +70,7 @@ attachEventHandlers = ->
 			input[0].setSelectionRange(0, input.val().length)
 			input.focus()
 			return
+		return
 	do (select = $('#templates')) ->
 		select.on 'change', (event) ->
 			addTranscription(select.val())
