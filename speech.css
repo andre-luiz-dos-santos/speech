@@ -8,6 +8,19 @@
 	font-size: 1.4em;
 	color: gray;
 }
+#error {
+	font-weight: bold;
+	color: red;
+}
+#error:before {
+	font-weight: normal;
+	content: "Erro: ";
+}
+#error:after {
+	font-weight: normal;
+	color: black;
+	content: " (using Chromium? Try Chrome)";
+}
 #text {
 	width: 100%;
 	height: 20em;

@@ -93,9 +93,12 @@ toggleListening = ->
 
 startRecognizer = ->
 	unless 'webkitSpeechRecognition' of window
-		message = "Your browser does not support the Web Speech API"
+		message = """
+			Your browser does not support the Web Speech API.
+			Try again using Google Chrome.
+			"""
 		alert message
-		$('body').empty().text(message)
+		$('body').empty().html(message.replace("\n", '<br>'))
 		return false
 
 	recognition = new webkitSpeechRecognition()
@@ -103,6 +106,7 @@ startRecognizer = ->
 	recognition.interimResults = true
 
 	recognition.onstart = (event) ->
+		$('#error').hide()
 		changeStatus("Stop", true)
 		listening = true
 		return
@@ -111,6 +115,11 @@ startRecognizer = ->
 		changeStatus("Start", true)
 		listening = false
 		$('#interim').text("...")
+		return
+
+	recognition.onerror = (event) ->
+		console.log event
+		$('#error').text(event.error).show()
 		return
 
 	recognition.onresult = (event) ->
