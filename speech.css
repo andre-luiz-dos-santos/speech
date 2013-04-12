@@ -2,7 +2,17 @@
 	font-size: 1.2em;
 }
 #start {
+	width: 6em;
 	font-size: 1.5em;
+	border-radius: 0.5em;
+}
+#start:not(:disabled) {
+	color: white;
+	background-color: green;
+}
+#start.on:not(:disabled) {
+	color: white;
+	background-color: red;
 }
 #interim {
 	font-size: 1.4em;
