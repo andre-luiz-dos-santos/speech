@@ -80,10 +80,8 @@ attachEventHandlers = ->
 	return
 
 toggleListening = ->
-	button = $("#start")
-	if button.prop('disabled') is true
+	if $("#start").prop('disabled') is true
 		return # already starting or stopping
-	button.toggleClass('on', !listening)
 	if listening
 		changeStatus("Stopping")
 		recognition.stop()
@@ -110,11 +108,13 @@ startRecognizer = ->
 	recognition.onstart = (event) ->
 		$('#error').hide()
 		changeStatus("Stop", true)
+		$("#start").addClass('on')
 		listening = true
 		return
 
 	recognition.onend = (event) ->
 		changeStatus("Start", true)
+		$("#start").removeClass('on')
 		listening = false
 		$('#interim').text("...")
 		return
