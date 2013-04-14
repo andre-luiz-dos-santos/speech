@@ -1,8 +1,12 @@
-#header {
-	font-size: 1.2em;
+#header button, #header select {
+	height: 2em;
 }
-#start {
+#github {
+	float: right;
+}
+button#start {
 	width: 6em;
+	height: 1.6em;
 	font-size: 1.5em;
 	border-radius: 0.5em;
 }
@@ -18,13 +22,16 @@
 	font-size: 1.4em;
 	color: gray;
 }
+button {
+	cursor: pointer;
+}
 #error {
 	font-weight: bold;
 	color: red;
 }
 #error:before {
 	font-weight: normal;
-	content: "Erro: ";
+	content: "Error: ";
 }
 #error:after {
 	font-weight: normal;
@@ -40,4 +47,22 @@
 #help .key {
 	font-weight: bold;
 	color: #006;
+}
+
+.buttonset {
+	text-align: center;
+}
+button.blue {
+	width: 6em;
+	height: 2em;
+	color: white;
+	background-color: blue;
+	font-size: 1.1em;
+	border-radius: 0.5em;
+}
+.page textarea {
+	width: 100%;
+}
+.page h1 {
+	text-align: center;
 }

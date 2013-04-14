@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -7,33 +8,51 @@
 		<script src="speech.js"></script>
 	</head>
 	<body>
-		<div id="header">
-			<button id="start" disabled="disabled">Opening</button>
-			<button id="prettify">Prettify</button>
-			<select id="templates">
-				<option></option>
-				<option>?</option>
-				<option>!</option>
-				<option>.</option>
-				<option>:-)</option>
-				<option>:-(</option>
-			</select>
-			<select id="language">
-				<option value="pt-BR">Portuguese (pt-BR)</option>
-				<option value="en-US">English (en-US)</option>
-				<option value="eo">Esperanto (eo)</option>
-				<option value="eo-EO">Esperanto (eo-EO)</option>
-			</select>
-			<a href="https://github.com/andre-luiz-dos-santos/speech" target="_blank">Source code at GitHub</a>
+		<div id="main-page" class="page">
+			<div id="header">
+				<button id="start" disabled="disabled">Opening</button>
+				<button id="prettify">Prettify</button>
+				<button id="menu-rules" class="edit">&larr; edit</button>
+				<select id="snippets"></select>
+				<button id="menu-snippets" class="edit">&larr; edit</button>
+				<select id="language"></select>
+				<button id="menu-langs" class="edit">&larr; edit</button>
+				<a id="github" href="https://github.com/andre-luiz-dos-santos/speech" target="_blank">Source code at <b>GitHub</b></a>
+			</div>
+			<div id="interim">...</div>
+			<div id="error" style="display:none"></div>
+			<textarea id="text"></textarea>
+			<div id="help">
+				Press <span class="key">Escape</span> to start/stop.<br>
+				Press <span class="key">Control-C</span> anywhere to run Prettify and copy all text.<br>
+				Press <span class="key">Control-X</span> anywhere to run Prettify and cut all text.<br>
+				Pressing <span class="key">Control-C</span> or <span class="key">Control-X</span> with text already selected will skip Prettify.<br>
+				Spoken text is added at the cursor position, replacing selected text.
+			</div>
 		</div>
-		<div id="interim">...</div>
-		<div id="error" style="display:none"></div>
-		<textarea id="text"></textarea>
-		<div id="help">
-			Press <span class="key">Escape</span> or <span class="key">Insert</span> to start/stop.<br>
-			Press <span class="key">Control-C</span> anywhere to run Prettify and copy all text.<br>
-			Press <span class="key">Control-X</span> anywhere to run Prettify and cut all text.<br>
-			Spoken text is added at the cursor position, replacing selected text.
+		<div id="langs-page" class="page" style="display:none">
+			<h1>Languages Selection</h1>
+			<textarea rows="20"></textarea>
+			<div class="buttonset">
+				<button id="save-langs" class="blue">Save</button>
+				<button id="reset-langs" class="blue">Reset</button>
+			</div>
+		</div>
+		<div id="rules-page" class="page" style="display:none">
+			<h1>Prettification Rules</h1>
+			<textarea rows="20"></textarea>
+			<div class="buttonset">
+				<button id="save-rules" class="blue">Save</button>
+				<button id="reset-rules" class="blue">Reset</button>
+			</div>
+		</div>
+		<div id="snippets-page" class="page" style="display:none">
+			<h1>Snippets</h1>
+			<textarea rows="20"></textarea>
+			<div class="buttonset">
+				<button id="save-snippets" class="blue">Save</button>
+				<button id="reset-snippets" class="blue">Reset</button>
+			</div>
 		</div>
 	</body>
 </html>
